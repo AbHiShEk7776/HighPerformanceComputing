@@ -1,0 +1,44 @@
+Cores: 6 physical cores
+
+Threads: 12 (via SMT/hyperthreading)
+
+Base Clock: 3.0GHz (3,000MHz)
+
+Max Boost Clock: 4.0GHz (4,000MHz)
+
+SIMD Support: Supports AVX2 (256-bit) and FMA, allowing multiple floating-point operations per clock per core
+
+Microarchitecture: Zen 2
+---------------------------------------------------------------------------------------------
+Step-by-Step Theoretical FLOPS Calculation
+
+Parameters Needed:
+
+    Number of Cores: 6
+
+    Clock Speed (Hz): 3.0GHz (3,000,000,000Hz) for sustained, or 4.0GHz (4,000,000,000Hz) for peak.
+
+    FLOPs per Cycle per Core: The Zen 2 architecture with AVX2+FMA can execute up to 16 single-precision (FP32) FLOPs per cycle per core (8 via vector FMA per cycle × 2 for FMA)
+
+    .
+
+Formula:
+FLOPS=Number of Cores×Clock Speed (Hz)×FLOPs per Cycle per Core
+FLOPS=Number of Cores×Clock Speed (Hz)×FLOPs per Cycle per Core
+
+Calculation: (using base clock)
+6 cores×3,000,000,000 Hz×16=288,000,000,000 FLOPS=288 GFLOPS
+6 cores×3,000,000,000Hz×16=288,000,000,000FLOPS=288GFLOPS
+
+Calculation: (using boost clock)
+6 cores×4,000,000,000 Hz×16=384,000,000,000 FLOPS=384 GFLOPS
+6 cores×4,000,000,000Hz×16=384,000,000,000FLOPS=384GFLOPS
+
+    These are theoretical single-precision (FP32) FLOPS; double-precision (FP64) rates are much lower on consumer CPUs.
+----------------------------------------------------------------------------------------------------------------------------------
+Parameter	Explanation	Value
+Cores	Physical CPU cores executing instructions independently	6
+Clock Speed (Hz)	Number of cycles per second per core (Hz = GHz × 1,000,000,000)	3.0GHz (Base), 4.0GHz (Boost)
+FLOPs/Cycle/Core	Max single-precision operations per clock per core (via AVX2 256-bit and FMA instructions)	16
+
+-----------------------------------------------------------------------------------------------------------------------------
